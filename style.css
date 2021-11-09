@@ -1,0 +1,266 @@
+/* * {
+  outline: 3px dotted red;
+} */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: monospace;
+}
+.container {
+  width: 90%;
+  margin: 0 auto;
+}
+
+/* fixing the navbar issue for the smooth scrolling */
+
+nav {
+  position: sticky;
+  position: -webkit-sticky; /*for safari support*/
+  top: 0;
+  background: linear-gradient(to left, rgb(10, 10, 10), rgb(128, 128, 128));
+  /* background-size: cover; */
+  z-index: 1;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.menuItem:hover {
+  text-decoration: underline;
+}
+
+a {
+  font-size: 2em;
+  text-decoration: none;
+  padding-left: 30px;
+  color: white;
+}
+
+#header {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+#header::before {
+  content: "";
+  background-image: url(new-york.jpg);
+  background-size: cover;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  opacity: 0.3;
+}
+
+h1 {
+  position: relative;
+  font-size: 3em;
+  text-align: center;
+  color: black;
+  padding: 0 50px;
+  line-height: 1.5;
+}
+
+h2 {
+  text-align: center;
+  font-size: 3em;
+  color: rgb(122, 4, 4);
+  padding: 120px 0 60px 0;
+}
+
+.h2 {
+  position: relative;
+  top: 0;
+  text-align: center;
+  font-size: 3em;
+  color: rgb(122, 4, 4);
+  padding-bottom: 60px;
+}
+
+.main {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-size: 2em;
+  line-height: 2;
+  min-height: 600px;
+}
+.row {
+  width: 30%;
+  text-align: center;
+}
+
+/* third section */
+
+.logos {
+  display: flex;
+}
+
+.logotext {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  column-gap: 2em;
+}
+.bulletpoint {
+  border: 1px solid grey;
+  border-radius: 50%;
+  display: block;
+  margin: 0 auto;
+}
+
+.text {
+  font-size: 2em;
+  text-align: center;
+  padding: 50px 0;
+}
+
+.article {
+  font-size: 200px;
+}
+
+/* fourth section */
+
+.members {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 3em;
+  padding-bottom: 100px;
+}
+.image {
+  margin: 0 auto;
+}
+.name {
+  font-size: 3em;
+  padding-bottom: 2em;
+  text-align: center;
+}
+
+.team-text {
+  font-size: 2em;
+  width: 50%;
+  text-align: center;
+  line-height: 1.8;
+}
+
+/* mobile responsiveness */
+
+@media (min-width: 1201px) {
+  .hamburger {
+    display: none;
+  }
+}
+
+@media (max-width: 1200px) {
+  /* the burger menu part */
+  a {
+    padding: 15px;
+  }
+  .navbar {
+    display: block;
+  }
+
+  .menuItem {
+    display: block;
+    margin: 2rem 4rem;
+    font-size: 1.8rem;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+  }
+
+  .hamburger {
+    position: fixed;
+    z-index: 100;
+    top: 2rem;
+    right: 2rem;
+    padding: 4px;
+    background-color: linear-gradient(
+      to left,
+      rgb(10, 10, 10),
+      rgb(128, 128, 128)
+    );
+    background: white;
+    cursor: pointer;
+  }
+
+  .closeIcon {
+    display: none;
+  }
+
+  .menu {
+    position: fixed;
+    transform: translateY(-100%);
+    transition: transform 0.5s;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 99;
+    background: linear-gradient(to left, rgb(10, 10, 10), rgb(128, 128, 128));
+    color: white;
+    list-style: none;
+    padding-top: 4rem;
+    text-align: center;
+  }
+
+  .showMenu {
+    transform: translateY(0);
+  }
+
+  /* about us part */
+  h1 {
+    position: relative;
+    top: -25px;
+    font-size: 2em;
+    text-align: center;
+    color: black;
+    padding: 0 50px;
+    line-height: 1.5;
+  }
+
+  .main,
+  .logotext {
+    display: block;
+  }
+  .row {
+    padding: 3em 0;
+    width: 100%;
+  }
+  /* our team part */
+  .members {
+    display: flex;
+    flex-direction: column;
+  }
+  .team-text {
+    width: 100%;
+  }
+  .imageContent {
+    width: 100%;
+  }
+}
+@media (max-width: 800px) {
+  .h2 {
+    padding-top: 20px;
+  }
+  .row,
+  .text,
+  .name,
+  .team-text {
+    font-size: 25px;
+    line-height: 2.5;
+  }
+}
