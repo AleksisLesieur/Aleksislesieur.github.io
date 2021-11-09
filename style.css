@@ -107,6 +107,7 @@ h2 {
 
 .logos {
   display: flex;
+  justify-content: center;
 }
 
 .logotext {
@@ -260,7 +261,11 @@ h2 {
   .text,
   .name,
   .team-text {
-    font-size: 25px;
+    font-size: 1rem;
     line-height: 2.5;
+  }
+  .bulletpoint {
+    width: 75px;
+    height: 50px;
   }
 }
